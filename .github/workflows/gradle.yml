@@ -46,3 +46,6 @@ jobs:
     #
     # - name: Build with Gradle 8.5
     #   run: gradle build
+
+    - name: Build the Docker image
+      run: docker --version
