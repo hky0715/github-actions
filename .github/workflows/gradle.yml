@@ -64,5 +64,8 @@ jobs:
 
     - shell: bash
       run: |
-        docker push alpine 
+        docker pull alpine
+        tagname=$(date +%s)
+        docker image tag alpine hky0715/alpine:$tagname
+        docker pull hky0715/alpine:$tagname
         
