@@ -55,3 +55,10 @@ jobs:
         DOCKER_SECRET: ${{ secrets.KAKAO_CREDENTIALS }}
       run: |
         echo "$DOCKER_SECRET"
+        
+    - env:
+        DOCKER_ID: ${{ secret.DOCKER_ID }}
+        DOCKER_PWD: ${{ secret.DOCKER_PWD }}
+      run: |
+        docker login -u "$DOCKER_ID" -p "$DOCKER_PWD"
+        
