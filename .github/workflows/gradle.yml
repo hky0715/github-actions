@@ -52,6 +52,6 @@ jobs:
 
     - shell: bash
       env:
-        SUPER_SECRET: ${{ secrets.KAKAO_CREDENTIALS }}
+        DOCKER_SECRET: ${{ secrets.KAKAO_CREDENTIALS }}
       run: |
-        echo "$SUPER_SECRET"
+        echo "$DOCKER_SECRET"
