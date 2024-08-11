@@ -49,3 +49,9 @@ jobs:
 
     - name: Build the Docker image
       run: docker --version
+
+    - shell: bash
+      env:
+        SUPER_SECRET: ${{ secrets.KAKAO_CREDENTIALS }}
+      run: |
+        echo "$SUPER_SECRET"
