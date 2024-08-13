@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springboot-test
+  name: springboot-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: springboot-test
+    spec:
+      containers:
+      - image: hky0715/yaguroute-app:1723535858
+        name: yaguroute-app
+        ports:
+        - containerPort: 8000
+        resources: {}
+      imagePullSecrets:
+        - name: docker-pull-secret
+status: {}
