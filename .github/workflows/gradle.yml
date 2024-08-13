@@ -62,7 +62,8 @@ jobs:
       run: |
         docker login -u "$DOCKER_ID" -p "$DOCKER_PWD"
         docker pull alpine
-        imagename="$DOCKER_ID"/alpine:$(git describe --tags)
+        # imagename="$DOCKER_ID"/alpine:$(git describe --tags)
+        imagename="$DOCKER_ID"/alpine:$(date +%s)
         docker image tag alpine $imagename
         docker push $imagename
         
