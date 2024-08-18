@@ -20,12 +20,9 @@ spec:
       containers:
       - image: hky0715/yaguroute-app:1723535858
         name: yaguroute-app
-        env:
-        - name: SERVER_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: springboot-test           # 이 값의 컨피그맵
-              key: SERVER_PORT
+        envFrom:
+          - configMapRef:
+              name: springboot-test
         ports:
         - containerPort: 8080
         resources: {}

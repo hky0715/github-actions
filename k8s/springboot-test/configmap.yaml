@@ -5,4 +5,7 @@ metadata:
 data:
 # application.yml: |
 #   port=8081
-    SERVER_PORT: "8081"
+  SERVER_PORT: "8081"
+  SPRING_DATASOURCE_URL: "jdbc:mysql://mysql-headless:3309/my_database"
+  SPRING_DATASOURCE_USERNAME: "testuser"
+  SPRING_DATASOURCE_PASSWORD: "test1234"
