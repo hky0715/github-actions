@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2024-08-18T11:19:27Z"
+  generation: 75
+  name: yaguroute-app
+  namespace: argocd
+  resourceVersion: "30304"
+  uid: c2e83afa-297f-4107-a57d-c98da5784b83
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s/springboot-test
+    repoURL: https://github.com/hky0715/github-actions.git
+    targetRevision: main
+
