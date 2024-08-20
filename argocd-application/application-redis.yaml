@@ -9,7 +9,13 @@ spec:
     namespace: redis
     server: https://kubernetes.default.svc
   project: default
-  source:
-    chart: bitnami/redis
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 7.4.0
+  sources:
+    - repoURL: https://charts.bitnami.com/bitnami
+      chart: bitnami/redis
+      targetRevision: 7.4.0
+      helm:
+        valueFiles:
+        - $values/k8s/redis-values.yaml
+    - repoURL: 'https://github.com/4JOCHAMCHI/YAGUROUTE.git'
+      targetRevision: develop
+      ref: values
