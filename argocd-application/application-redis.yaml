@@ -1,18 +1,15 @@
+# https://argo-cd.readthedocs.io/en/stable/user-guide/helm/
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  creationTimestamp: "2024-08-18T11:19:27Z"
-  generation: 75
-  name: yaguroute-app
-  namespace: argocd
-  resourceVersion: "30304"
-  uid: c2e83afa-297f-4107-a57d-c98da5784b83
+  name: redis
+  namespace: redis
 spec:
   destination:
-    namespace: default
+    namespace: redis
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: k8s/springboot-test
-    repoURL: https://github.com/hky0715/github-actions.git
-    targetRevision: main
+    chart: bitnami/redis
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 7.4.0
