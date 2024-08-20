@@ -12,7 +12,7 @@ spec:
   sources:
     - repoURL: https://charts.bitnami.com/bitnami
       chart: bitnami/redis
-      targetRevision: 7.4.0
+      targetRevision: redis-20.0.2
       helm:
         valueFiles:
         - $values/k8s/redis-values.yaml
