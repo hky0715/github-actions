@@ -1,1 +1,21 @@
-
+# https://argo-cd.readthedocs.io/en/stable/user-guide/helm/
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kafka-cluster
+  namespace: kafka
+spec:
+  destination:
+    namespace: kafka
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+    - repoURL: https://charts.bitnami.com/bitnami
+      chart: bitnami/kafka
+      targetRevision: kafka-30.0.4
+      helm:
+        valueFiles:
+        - $values/k8s/kafka-values.yaml
+    - repoURL: 'https://github.com/4JOCHAMCHI/YAGUROUTE.git'
+      targetRevision: develop
+      ref: values
